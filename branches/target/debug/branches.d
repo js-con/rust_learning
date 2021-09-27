@@ -1,1 +1,1 @@
-C:\projects\rust\branches\target\debug\branches.exe: C:\projects\rust\branches\src\main.rs
+D:\demo\rust_learning\branches\target\debug\branches.exe: D:\demo\rust_learning\branches\src\main.rs
