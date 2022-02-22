@@ -1,0 +1,3 @@
+target/
+*/src/*.pdb
+*/src/*.exe

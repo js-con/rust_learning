@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-23 23:59:37
- * @LastEditTime: 2021-09-24 23:37:26
- * @LastEditors: Lin Bowen
- * @Description:
- * @FilePath: \rust\variables\src\main.rs
- */
 fn main() {
     //隐藏变量 可改变类型
     let x = 5;

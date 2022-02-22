@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-26 01:23:40
- * @LastEditTime: 2021-09-26 23:36:03
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust\slice\src\main.rs
- */
 fn main() {
     {
         fn first_word(s: &String) -> usize {
