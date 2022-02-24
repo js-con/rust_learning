@@ -1,16 +1,19 @@
-use std::{collections::HashMap, iter::FromIterator, vec};
+use std::{collections::HashMap, iter::FromIterator, vec, io::stdin};
 
 fn main() {
     //learning_vector();
     //learning_string();
     //learning_map();
-    let test_vec = vec![
+/*     let test_vec = vec![
         5, -5, 8, 7, 9, 12, -9, -11, -6, 2, 7, 4, 3, 6, 5, 8, 7, 9, 4, 11, 2, 3, 5,
     ];
     let median = get_median(&test_vec);
     println!("median is {}", median);
 
-    get_mode(&test_vec);
+    let mode = get_mode(&test_vec);
+    println!("mode is {}",mode); */
+
+    department();
 }
 
 fn learning_vector() {
@@ -231,7 +234,7 @@ fn learning_map() {
 fn get_median(vec: &Vec<i32>) -> i32 {
     let mut slice = Vec::from_iter(vec[..].iter().cloned());
     slice.sort();
-    let mut median_index = slice.len() / 2;
+    let median_index = slice.len() / 2;
     return slice[median_index];
 }
 //返回一个vec的众数
@@ -249,3 +252,38 @@ fn get_mode(vec: &Vec<i32>) -> i32 {
         .expect("Cannot compute the mode of zero numbers");
 }
 // 使用哈希 map 和 vector，创建一个文本接口来允许用户向公司的部门中增加员工的名字。例如，“Add Sally to Engineering” 或 “Add Amir to Sales”。接着让用户获取一个部门的所有员工的列表，或者公司每个部门的所有员工按照字典序排列的列表。
+fn department(){
+    let mut department = HashMap::new();
+    department.insert("张三".to_string(), "程序员".to_string());
+
+    loop {
+        println!("选择操作：1. 新增员工  2. 查看部门");
+
+        let mut choose = String::new();
+        stdin().read_line(&mut choose).expect("获取输入失败");
+        println!("{}",&choose);
+        let choose:u32 = match choose.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue
+        };
+        if choose == 1 {
+            let mut name = String::new();
+            let mut position = String::new();
+
+            println!("请输入员工姓名");
+            stdin().read_line(&mut name).expect("获取姓名失败");
+            let name = name;
+
+            println!("请输入员工职位");
+            stdin().read_line(&mut position).expect("获取职位失败");
+            let position = position;
+
+            println!("添加成功");
+            department.insert(name.replace("\r\n", ""), position.replace("\r\n", ""));
+        }
+        if choose == 2 {
+            println!("{:?}",&department);
+        }
+    }
+
+}
