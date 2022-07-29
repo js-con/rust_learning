@@ -231,7 +231,51 @@ fn trait_learning() {
         }
     }
 }
+fn lifetime_learning(){
+    {
+        // 生命周期避免了悬垂引用
+        let r;
+        {
+            let x = 5;
+            r = &x;
+        }
+        println!("r:{}",r)
+    }
+
+    {
+        // 函数中的泛型生命周期
+        fn longest<'a>(x: &'a str, y:&'a str) -> &'a str{
+            if x.len() > y.len() {
+                x
+            }else {
+                y
+            }
+        } 
+
+        let long_string = "long string is long".to_string();
+        let result;
+        {
+            let short_string = "xyz".to_string();
+            result = longest(long_string.as_str(), short_string.as_str());
+        }
+        println!("The longest string is {}", result)
+    }
+
+    {
+        // 包含引用的结构体
+        struct ImportantExcerpt<'a>{
+            part: &'a str
+        }
+        let novel = "Call me Ishmael. Some years ago".to_string();
+        let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+
+        // 该实例不能比part字短中的引用存在的更久
+        let i = ImportantExcerpt{
+            part: first_sentence
+        };
+    }
+}
 fn main() {
-    //generic_learning();
+    generic_learning();
     trait_learning();
 }
