@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-24 23:46:09
- * @LastEditTime: 2021-09-24 23:48:55
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust\branches\src\main.rs
- */
 fn main() {
     let number = 3;
 

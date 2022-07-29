@@ -1,12 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-23 23:38:18
- * @LastEditTime: 2021-09-23 23:40:16
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust\guess_game\src\main.rs
- */
-
 use std::io;
 use std::cmp::Ordering;
 use rand::Rng;

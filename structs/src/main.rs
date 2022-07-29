@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-26 23:36:39
- * @LastEditTime: 2021-09-27 00:42:53
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust\structs\src\main.rs
- */
 fn main() {
     {
         struct User{

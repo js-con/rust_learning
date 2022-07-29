@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-24 23:50:02
- * @LastEditTime: 2021-09-25 00:49:05
- * @LastEditors: Lin Bowen
- * @Description:
- * @FilePath: \rust\loops\src\main.rs
- */
 fn main() {
     loop {
         println!("again!");

@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-27 16:14:59
- * @LastEditTime: 2021-09-27 17:31:01
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust_learning\restaurant\src\lib.rs
- */
 mod front_of_house{
     pub mod hosting{
         pub fn add_to_waitlist(){}

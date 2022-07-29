@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-27 10:23:11
- * @LastEditTime: 2021-09-27 15:50:02
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust_learning\matches\src\main.rs
- */
 fn main() {
     {
         #[derive(Debug)]

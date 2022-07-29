@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-27 01:08:53
- * @LastEditTime: 2021-09-27 10:23:23
- * @LastEditors: Lin Bowen
- * @Description: 
- * @FilePath: \rust_learning\enumeration\src\main.rs
- */
 fn main() {
     {
         #[derive(Debug)]

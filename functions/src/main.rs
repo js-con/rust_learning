@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-24 23:37:15
- * @LastEditTime: 2021-09-24 23:43:58
- * @LastEditors: Lin Bowen
- * @Description:
- * @FilePath: \rust\functions\src\main.rs
- */
 fn main() {
     println!("Hello, world!");
 

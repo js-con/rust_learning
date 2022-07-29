@@ -1,11 +1,3 @@
-/*
- * @Author: Lin Bowen
- * @Date: 2021-09-25 01:08:50
- * @LastEditTime: 2021-09-26 01:23:35
- * @LastEditors: Lin Bowen
- * @Description:
- * @FilePath: \rust\Ownership\src\main.rs
- */
 fn main() {
     //rust采用类似Resource Acquisition Is Initialization (RAII)的模式释放内存
     //即在变量离开作用域时，调用内部的drop函数释放内存
