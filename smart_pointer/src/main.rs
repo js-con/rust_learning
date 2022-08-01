@@ -1,9 +1,11 @@
 mod drop;
 mod deref;
-mod box;
+mod r#box;
+mod rc;
 
 fn main() {
   drop::run();
   deref::run();
+  rc::run();
 }
 
