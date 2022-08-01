@@ -1,0 +1,22 @@
+[workspace]
+
+members = [
+  "adder",
+  "branches",
+  "collections",
+  "enumeration",
+  "functions",
+  "generic-trait-lifetime",
+  "guess_game",
+  "hello_cargo",
+  "loops",
+  "matches",
+  "minigrep",
+  "Ownership",
+  "panic",
+  "restaurant",
+  "slice",
+  "structs",
+  "variables",
+  "smart_pointer",
+]
