@@ -1,3 +1,2 @@
-《Rust Programming language》乱敲
+practice for 《Rust Programming language》、《learning Rust With Entirely Too many Linked Lists》
 
-小孩子不懂rust，写着玩的
