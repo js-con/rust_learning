@@ -19,4 +19,5 @@ members = [
   "structs",
   "variables",
   "smart_pointer",
+  "lists"
 ]
