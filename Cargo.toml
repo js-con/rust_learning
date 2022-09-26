@@ -19,5 +19,6 @@ members = [
   "structs",
   "variables",
   "smart_pointer",
-  "lists"
+  "lists",
+  "web-server"
 ]
