@@ -1,4 +1,5 @@
 use std::{
+    fs,
     io::{Read, Write},
     net::{TcpListener, TcpStream},
 };
@@ -17,8 +18,20 @@ fn handle_connection(mut stream: TcpStream) {
     let mut buffer = [0; 1024];
     stream.read(&mut buffer).unwrap();
 
-    let response = "HTTP/1.1 200 ok\r\n\r\n";
+    let (status_line, file_name) = if buffer.starts_with(b"GET / HTTP/1.1\r\n") {
+        ("HTTP/1.1 200 ok", "hello.html")
+    } else {
+        ("HTTP/1.1 404 NOT FOUND", "404.html")
+    };
 
+    let contents = fs::read_to_string(file_name).unwrap();
+
+    let response = format!(
+        "{}\r\nContent-length: {}\r\n\r\n{}",
+        status_line,
+        contents.len(),
+        contents
+    );
     stream.write(response.as_bytes()).unwrap();
     stream.flush().unwrap();
 }
