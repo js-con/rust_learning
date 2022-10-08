@@ -2,7 +2,7 @@ use std::{
     fs,
     io::{Read, Write},
     net::{TcpListener, TcpStream},
-    thread::{self, sleep},
+    thread::sleep,
     time::Duration,
 };
 use web_server::ThreadPool;
