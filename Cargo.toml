@@ -20,5 +20,6 @@ members = [
   "variables",
   "smart_pointer",
   "lists",
-  "web-server"
+  "concurrency",
+  "web-server",
 ]
