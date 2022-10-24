@@ -1,6 +1,14 @@
-use std::{thread, time::Duration, sync::mpsc};
+use std::{
+    sync::{mpsc, Mutex},
+    thread,
+    time::Duration,
+};
 
 fn main() {
+    mutex();
+}
+
+fn channel() {
     let (tx, rx) = mpsc::channel();
 
     let tx1 = tx.clone();
@@ -35,4 +43,14 @@ fn main() {
     for received in rx {
         println!("Got: {}", received);
     }
+}
+
+fn mutex() {
+    let m = Mutex::new(5);
+
+    {
+        let mut num = m.lock().unwrap();
+        *num = 6;
+    }
+    println!("m = {:?}", m);
 }
