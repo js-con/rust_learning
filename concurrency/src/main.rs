@@ -1,5 +1,5 @@
 use std::{
-    sync::{mpsc, Mutex},
+    sync::{mpsc, Arc, Mutex},
     thread,
     time::Duration,
 };
@@ -53,4 +53,22 @@ fn mutex() {
         *num = 6;
     }
     println!("m = {:?}", m);
+
+    //需要使用Arc来赋予Mutex线程安全,Rc不能保证线程安全
+    let counter = Arc::new(Mutex::new(0));
+    let mut handlers = vec![];
+    for _ in 0..10 {
+        let counter = Arc::clone(&counter);
+        let handle = thread::spawn(move || {
+            let mut num = counter.lock().unwrap();
+            *num += 1;
+        });
+        handlers.push(handle);
+    }
+
+    for handle in handlers {
+        handle.join().unwrap();
+    }
+
+    println!("Result:{}", *counter.lock().unwrap());
 }
