@@ -1,7 +1,7 @@
 use std::sync::{mpsc, Arc, Mutex};
 use std::thread;
 
-struct Job;
+type Job = Box<dyn FnOnce() + Send + 'static>;
 struct Worker {
     id: usize,
     thread: thread::JoinHandle<()>,
@@ -40,5 +40,7 @@ impl ThreadPool {
     where
         F: FnOnce() + Send + 'static,
     {
+        let job = Box::new(f);
+        self.sender.send(job).unwrap();
     }
 }
